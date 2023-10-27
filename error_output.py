@@ -1,5 +1,6 @@
-def print_error_message():
+def print_error_message(message):
     """
     Функция реализующая форматированный вывод сообщения об ошибке в консоль.
+    :param message: Текст сообщения об ошибке.
     """
     pass

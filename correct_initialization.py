@@ -5,16 +5,18 @@ def input_correct_num():
     pass
 
 
-def ui_array_init():
+def ui_array_init(array):
     """
     Функция для инициализации массива числами вручную.
+    :param array: Массив для инициализации.
     """
     pass
 
 
-def auto_array_init():
+def auto_array_init(array):
     """
     Функция для инициализации массива случайными числами.
+    :param array: Массив для инициализации.
     """
     pass
 
