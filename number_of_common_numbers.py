@@ -108,7 +108,21 @@ def ui_number_of_common_numbers():
 def number_of_common_numbers(first_array, second_array):
     """
     Функция находит количество общих чисел в двух массивах.
-    Число считается общим если оно входит в один массив, а в другом
+    Также, число считается общим если оно входит в один массив, а в другом
     находится его перевернутая версия.
+    :param first_array: Первый массив чисел;
+    :param second_array: второй массив чисел.
+    :return: Возвращает количество общих чисел двух массивов.
     """
-    pass
+    num_of_common_numbers = 0
+    # Список в который будут добавляться общие числа
+    list_of_common_numbers = []
+    for elem in first_array:
+        # Если число из первого массива или его обратная версия находятся во втором массиве
+        # И это число еще не обрабатывалось прежде т. е. его нет в списке общих чисел
+        # То оно добавляется в список и кол-во общих чисел увеличивается на 1
+        if ((str(elem) in list(map(str, second_array)) or str(elem)[::-1] in list(map(str, second_array))) and
+                elem not in list_of_common_numbers):
+            num_of_common_numbers += 1
+            list_of_common_numbers.append(elem)
+    return num_of_common_numbers
