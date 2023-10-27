@@ -2,6 +2,7 @@ from os import system
 from console_ui import *
 from correct_initialization import *
 from error_output import *
+from math import sqrt
 
 
 # Задача №2
@@ -153,12 +154,25 @@ def distance_between_points(first_array_of_dots, second_array_of_dots, distance)
     :param second_array_of_dots: второй массив точек;
     :param distance: заданное расстояние с которым будут сравниваться длины отрезков двух точек взятых
     из первого и второго массивов.
+    :return: Возвращает словарь где ключи - длины отрезков которые больше заданного числа, а значения - пара точек,
+    которые эти отрезки образуют.
     """
-    pass
+    return {
+        segment_length(dot1, dot2): [dot1, dot2]
+        for dot1, dot2 in zip(first_array_of_dots, second_array_of_dots)
+        if segment_length(dot1, dot2) > distance
+    }
 
 
-def segment_length():
+def segment_length(dot1, dot2):
     """
     Функция вычисляющая длину отрезка образованного двумя точками.
+    :param dot1: Первая точка;
+    :param dot2: вторая точка.
+    :return: Возвращает длину отрезка образованного двумя точками.
     """
-    pass
+    return sqrt(
+        sum(
+            (c1 - c2) ** 2 for c1, c2 in zip(dot1, dot2)
+        )
+    )
