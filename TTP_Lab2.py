@@ -1,4 +1,3 @@
-from console_ui import *
 from number_of_common_numbers import *
 from distance_between_points import *
 from arithmetic_conversion import *
@@ -11,7 +10,13 @@ def main():
     Функция старта главного меню.
     """
     while True:
-        task_selection_item = ui_menu()
+        task_selection_item = ui_menu(
+            'Меню выбора задания.\n'
+            '1. Проверка двух массивов на количество общих чисел.\n'
+            '2. Расстояние между точками.\n'
+            '3. Логическое следствие элементов трех массивов.\n'
+            '4. Выход из программы.'
+        )
 
         match task_selection_item:
             case 1:
@@ -28,7 +33,7 @@ def main():
                 return
 
             case _:
-                print_error_message()
+                print_error_message('В меню всего 4 пункта. Попробуйте еще раз.')
 
 
 if __name__ == '__main__':
